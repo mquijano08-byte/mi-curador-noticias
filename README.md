@@ -78,4 +78,3 @@ Este es un proyecto de código abierto con fines educativos y de auditoría peri
 Un último consejo "Pro":
 Como ya tenés todo esto listo, cuando hagas el git push, GitHub va a renderizar ese texto con cajitas de código y negritas automáticas.
 
-¿Querés que pasemos a conectar esto con Vercel? Así ya te olvidás de la terminal y tenés tu app funcionando en la nube. Solo necesitás entrar a Vercel y darle a "Add New Project". Si querés, te guío paso a paso.

@@ -10,8 +10,15 @@ export async function POST(request: Request) {
     const { url } = await request.json();
     if (!url) return NextResponse.json({ resumen: "URL requerida" }, { status: 400 });
 
+    // --- BLOQUEO DE YOUTUBE ---
+    if (url.includes("youtube.com") || url.includes("youtu.be")) {
+      return NextResponse.json({ 
+        resumen: "### ⚠️ Enlace no compatible\nActualmente, este curador de noticias solo puede procesar artículos de prensa escrita y contenido de texto. No tengo la capacidad de analizar videos o contenido audiovisual de YouTube de forma directa. Por favor, ingresa el link de una noticia escrita o un tema de actualidad." 
+      });
+    }
+    // --------------------------
+
     // PASO 1: Búsqueda simultánea con filtro temporal estricto
-    // Nota: Bajamos el 'days' de la primera búsqueda a 1 para evitar basura de 2023
     const [busquedaGeneral, busquedaOposicion] = await Promise.all([
       tvly.search(`noticia de hoy: ${url}`, {
         searchDepth: "advanced",
@@ -75,7 +82,7 @@ export async function POST(request: Request) {
         },
       ],
       model: "llama-3.3-70b-versatile",
-      temperature: 0.4, // Balance perfecto entre precisión y capacidad de análisis
+      temperature: 0.4,
     });
 
     return NextResponse.json({ 
