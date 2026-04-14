@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📰 Curador de Noticias IA - Analizador de Sesgos Mediáticos
 
-## Getting Started
+Un analista político digital diseñado para auditar la "grieta" mediática en tiempo real. Utiliza **IA (Llama 3.3)** y el motor de búsqueda **Tavily** para contrastar cómo diferentes medios cubren una misma noticia, exponiendo omisiones y sesgos editoriales.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-16.1-black?style=for-the-badge&logo=next.js)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-4.0-blue?style=for-the-badge&logo=tailwind-css)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
 
-```bash
+---
+
+## 🚀 Funcionalidades Principales
+
+- **Búsqueda Multi-Vía:** Ejecuta búsquedas paralelas para capturar visiones de medios con diferentes líneas editoriales.
+- **Análisis de Framing:** Identifica el uso de adjetivos y encuadres según el medio analizado.
+- **Detección de Omisiones:** Expone datos clave que un bando menciona y el otro decide ocultar.
+- **Veredicto Neutral:** Genera una conclusión objetiva basada estrictamente en los puntos de consenso.
+- **Fuentes Verificables:** Incluye enlaces directos a las noticias reales analizadas por la IA.
+
+## 🛠️ Stack Tecnológico
+
+### Frontend & Framework
+- **Next.js 16 (App Router):** Última versión para un rendimiento óptimo.
+- **Tailwind CSS 4:** Estilizado moderno con la configuración `@import "tailwindcss"`.
+- **React Markdown:** Para visualizar los informes de la IA con formato profesional.
+
+### Inteligencia Artificial (Agentes)
+- **Groq SDK:** Motor principal utilizando el modelo **Llama 3.3 70B Versatile**.
+- **Tavily AI Core:** Búsqueda web optimizada para agentes de IA (evita el "ruido" de anuncios).
+- **SDKs Integrados:** Preparado para expansión con **Anthropic (Claude)**, **Gemini** y **OpenAI**.
+
+---
+
+## 📦 Instalación y Configuración local
+
+Sigue estos pasos para clonar y ejecutar el curador en tu máquina:
+
+1. **Clonar el repositorio:**
+    Bash
+   git clone [https://github.com/TU_USUARIO/mi-curador-noticias.git](https://github.com/TU_USUARIO/mi-curador-noticias.git)
+   cd mi-curador-noticias
+
+## 📦 Instalación y Configuración
+Sigue estos pasos para ejecutar el proyecto en tu entorno local:
+
+Clonar el repositorio:
+
+    Bash
+git clone https://github.com/TU_USUARIO/mi-curador-noticias.git
+cd mi-curador-noticias
+**Instalar dependencias: Usamos el archivo package-lock.json para garantizar que las versiones sean exactas.**
+
+    Bash
+npm install
+**Configurar variables de entorno: Crea un archivo llamado .env.local en la raíz del proyecto y agrega tus credenciales:**
+
+Fragmento de código
+GROQ_API_KEY=tu_clave_aqui
+TAVILY_API_KEY=tu_clave_aqui
+Correr en modo desarrollo:
+
+    Bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Luego, abre http://localhost:3000 en tu navegador.
+ ## ⚠️ Solución de Problemas
+Error de Iconos: Si la consola muestra que faltan componentes como Search o Globe, instala Lucide ejecutando:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+npm install lucide-react
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Estilos de Tailwind: Este proyecto usa Tailwind v4. Asegúrate de que tu archivo globals.css contenga únicamente la nueva directiva:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+@import "tailwindcss";
 
-## Learn More
+Falla en el Análisis: Si la IA no responde, verifica que tus API Keys de Groq o Tavily tengan créditos disponibles y estén bien escritas en el .env.local.
 
-To learn more about Next.js, take a look at the following resources:
+## 📄 Licencia
+Este es un proyecto de código abierto con fines educativos y de auditoría periodística. ¡Sentite libre de hacer un fork y mejorarlo!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Un último consejo "Pro":
+Como ya tenés todo esto listo, cuando hagas el git push, GitHub va a renderizar ese texto con cajitas de código y negritas automáticas.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+¿Querés que pasemos a conectar esto con Vercel? Así ya te olvidás de la terminal y tenés tu app funcionando en la nube. Solo necesitás entrar a Vercel y darle a "Add New Project". Si querés, te guío paso a paso.
