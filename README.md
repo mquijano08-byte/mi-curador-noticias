@@ -75,6 +75,4 @@ Falla en el Análisis: Si la IA no responde, verifica que tus API Keys de Groq o
 ## 📄 Licencia
 Este es un proyecto de código abierto con fines educativos y de auditoría periodística. ¡Sentite libre de hacer un fork y mejorarlo!
 
-Un último consejo "Pro":
-Como ya tenés todo esto listo, cuando hagas el git push, GitHub va a renderizar ese texto con cajitas de código y negritas automáticas.
 
